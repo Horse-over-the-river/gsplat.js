@@ -25,7 +25,7 @@ async function main() {
     const url = "https://huggingface.co/cakewalk/splat-data/blob/main/train.splat";
     await SPLAT.Loader.LoadAsync(url, scene, (progress) => (progressIndicator.value = progress * 100));
     progressDialog.close();
-    scene.saveToFile("bonsai-7k-mini.ply", "ply");
+    scene.saveToFile("train.ply", "ply");
 
     // Render loop
     const frame = () => {
