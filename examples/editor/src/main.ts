@@ -53,7 +53,7 @@ async function selectFile(file: File) {
 }
 
 async function main() {
-    const url = "https://huggingface.co/datasets/dylanebert/3dgs/resolve/main/bonsai/bonsai-7k-mini.splat";
+    const url = "https://huggingface.co/cakewalk/splat-data/blob/main/train.splat";
     await SPLAT.Loader.LoadAsync(url, engine.scene, (progress) => (progressIndicator.value = progress * 100));
     progressDialog.close();
     engine.renderer.backgroundColor = new SPLAT.Color32(64, 64, 64, 255);

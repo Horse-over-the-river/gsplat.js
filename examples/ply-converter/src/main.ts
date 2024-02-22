@@ -14,18 +14,18 @@ const format = "";
 
 async function main() {
     // Load and convert ply from url
-    const url =
-        "https://huggingface.co/datasets/dylanebert/3dgs/resolve/main/bonsai/point_cloud/iteration_7000/point_cloud.ply";
-    await SPLAT.PLYLoader.LoadAsync(url, scene, (progress) => (progressIndicator.value = progress * 100), format);
-    progressDialog.close();
-    scene.saveToFile("bonsai.splat");
+    // const url =
+    //     "https://huggingface.co/datasets/dylanebert/3dgs/resolve/main/bonsai/point_cloud/iteration_7000/point_cloud.ply";
+    // await SPLAT.PLYLoader.LoadAsync(url, scene, (progress) => (progressIndicator.value = progress * 100), format);
+    // progressDialog.close();
+    // scene.saveToFile("bonsai.splat");
 
     // Alternatively, uncomment below to convert from splat to ply
     // NOTE: Data like SH coefficients will be lost when converting ply -> splat -> ply
-    /* const url = "https://huggingface.co/datasets/dylanebert/3dgs/resolve/main/bonsai/bonsai-7k-mini.splat";
+    const url = "https://huggingface.co/cakewalk/splat-data/blob/main/train.splat";
     await SPLAT.Loader.LoadAsync(url, scene, (progress) => (progressIndicator.value = progress * 100));
     progressDialog.close();
-    scene.saveToFile("bonsai-7k-mini.ply", "ply"); */
+    scene.saveToFile("bonsai-7k-mini.ply", "ply");
 
     // Render loop
     const frame = () => {
